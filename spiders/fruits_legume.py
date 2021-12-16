@@ -12,8 +12,9 @@ class FruitsLegumeSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        items = {}
-        box = response.xpath('//li[@class="month open"]').getall()
+        box = response.xpath('//li[@class="month open"]')
         for item in box:
-            items["month"] = response.xpath('//h2/text()').get()
-        return items,box
+            yield{
+                "month" : item.xpath('.//header/div/h2/text()').get(),
+                "vegetables" : item.xpath('.//section/article/ul/li/text()').getall(),
+            }
