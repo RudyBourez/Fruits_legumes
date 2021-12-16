@@ -6,8 +6,15 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+from pymongo import MongoClient
+import pymongo
+import scrapy
+from scrapy.exceptions import DropItem
 
 class FruitLegumePipeline:
     def process_item(self, item, spider):
         return item
+
+
+
+    
