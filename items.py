@@ -7,11 +7,15 @@
 from scrapy.item import Item, Field
 
 class FruitLegumeItem(Item):
-    cereales = Field()
-    legumes = Field()
-    fruits = Field()
-    month = Field()
+    Cereales = Field()
+    Legumes = Field()
+    Fruits = Field()
+    Month = Field()
 
+class PriceItem(Item):
+    name = Field()
+    type = Field()
+    price = Field()
 
 
 

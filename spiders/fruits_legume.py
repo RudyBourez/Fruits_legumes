@@ -12,8 +12,8 @@ class FruitsLegumeSpider(scrapy.Spider):
         box = response.xpath('//li[@class="month open"]')
         for elements in box:
             item = FruitLegumeItem()
-            item["month"] = elements.xpath('.//header/div/h2/text()').get()
-            item["fruits"] = [i.strip() for i in elements.xpath('.//section/article[2]/ul/li/text()').getall()]
-            item["legumes"] = [i.strip() for i in elements.xpath('.//section/article[1]/ul/li/text()').getall()]
-            item["cereales"] = [i.strip() for i in elements.xpath('.//section/article[3]/ul/li/text()').getall()]
+            item["Month"] = f'{box.index(elements) + 1} : ' + elements.xpath('.//header/div/h2/text()').get()
+            item["Fruits"] = [i.strip() for i in elements.xpath('.//section/article[2]/ul/li/text()').getall()]
+            item["Legumes"] = [i.strip() for i in elements.xpath('.//section/article[1]/ul/li/text()').getall()]
+            item["Cereales"] = [i.strip() for i in elements.xpath('.//section/article[3]/ul/li/text()').getall()]
             yield item

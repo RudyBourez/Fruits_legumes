@@ -12,7 +12,8 @@ BOT_NAME = 'fruit_legume'
 SPIDER_MODULES = ['fruit_legume.spiders']
 NEWSPIDER_MODULE = 'fruit_legume.spiders'
 
-
+DOWNLOAD_DELAY = .25
+RANDOMIZE_RANDOM_DELAY = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'fruit_legume (+http://www.yourdomain.com)'
@@ -64,11 +65,12 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
-# ITEM_PIPELINES = {
-#    'fruit_legume.pipelines.FruitLegumePipeline': 300,
-# }
-# MONGO_HOST = "mongodb+srv://Rudy_datascience:Cr21042014.@cluster0.mlwpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-# MONGO_DB = "Projet"
+ITEM_PIPELINES = {
+   'fruit_legume.pipelines.FruitLegumePipeline': 300,
+   # 'fruit_legume.pipelines.PricePipeline': 500,
+}
+MONGO_HOST = "mongodb+srv://Rudy_datascience:Cr21042014.@cluster0.mlwpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MONGO_DB = "Projet"
 
 
 # Enable and configure the AutoThrottle extension (disabled by default)
