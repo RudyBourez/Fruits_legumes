@@ -64,11 +64,11 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
-ITEM_PIPELINES = {
-   'fruit_legume.pipelines.FruitLegumePipeline': 300,
-}
-MONGO_HOST = "mongodb+srv://Rudy_datascience:Cr21042014.@cluster0.mlwpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-MONGO_DB = "Projet"
+# ITEM_PIPELINES = {
+#    'fruit_legume.pipelines.FruitLegumePipeline': 300,
+# }
+# MONGO_HOST = "mongodb+srv://Rudy_datascience:Cr21042014.@cluster0.mlwpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+# MONGO_DB = "Projet"
 
 
 # Enable and configure the AutoThrottle extension (disabled by default)
