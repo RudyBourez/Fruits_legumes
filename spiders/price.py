@@ -15,7 +15,7 @@ class PriceSpider(CrawlSpider):
     def parse_item(self, response):
         item = PriceItem()
 
-        item['name'] = response.xpath('//h1/text()').get()
-        item['type'] = response.xpath('//div[@class="signet"]/a[4]/text()').get()[2:]
-        item['price'] = response.xpath('//table[@class="tabcot"]/tbody/tr/td[@class="tdcotr"]/strong/text()').getall()
+        item['Name'] = response.xpath('//h1/text()').get()
+        item['Type'] = response.xpath('//div[@class="signet"]/a[4]/text()').get()[2:]
+        item['Price'] = response.xpath('//table[@class="tabcot"]/tbody/tr/td[@class="tdcotr"]/strong/text()').getall()
         yield item

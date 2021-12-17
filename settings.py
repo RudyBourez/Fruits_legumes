@@ -67,7 +67,6 @@ ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
    'fruit_legume.pipelines.FruitLegumePipeline': 300,
-   # 'fruit_legume.pipelines.PricePipeline': 500,
 }
 MONGO_HOST = "mongodb+srv://Rudy_datascience:Cr21042014.@cluster0.mlwpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 MONGO_DB = "Projet"
