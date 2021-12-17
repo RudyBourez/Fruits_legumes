@@ -17,5 +17,8 @@ class PriceSpider(CrawlSpider):
 
         item['Name'] = response.xpath('//h1/text()').get()
         item['Type'] = response.xpath('//div[@class="signet"]/a[4]/text()').get()[2:]
-        item['Price'] = response.xpath('//table[@class="tabcot"]/tbody/tr/td[@class="tdcotr"]/strong/text()').getall()
+        item["Price"] = response.xpath('//table[@class="tabcot"]/tbody/tr/td[@class="tdcotr"]/strong/text()').getall()
+        for element in item["Price"]:
+            if element == "\xa0":
+                item["Price"].remove(element)
         yield item
