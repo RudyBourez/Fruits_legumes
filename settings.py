@@ -12,7 +12,7 @@ BOT_NAME = 'fruit_legume'
 SPIDER_MODULES = ['fruit_legume.spiders']
 NEWSPIDER_MODULE = 'fruit_legume.spiders'
 
-DOWNLOAD_DELAY = .25
+DOWNLOAD_DELAY = .1
 RANDOMIZE_RANDOM_DELAY = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

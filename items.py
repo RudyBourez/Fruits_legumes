@@ -15,3 +15,10 @@ class PriceItem(Item):
     Name = Field()
     Type = Field()
     Price = Field()
+
+class RecettesItem(Item):
+    Name = Field()
+    Ingredients = Field()
+    Link = Field()
+    Note = Field()
+    Time = Field()

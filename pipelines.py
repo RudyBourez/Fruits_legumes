@@ -11,7 +11,7 @@ import logging
 
 class FruitLegumePipeline(object):
 
-    collection_name = 'vegetables'
+    collection_name = ""
 
     def __init__(self, mongo_host, mongo_db):
         self.mongo_host = mongo_host
@@ -37,8 +37,8 @@ class FruitLegumePipeline(object):
 
     def process_item(self, item, spider):
         # how to handle each post
-        if spider.name == "price":
-            self.collection_name = "price"
+        self.collection_name = spider.name
+        
         self.db[self.collection_name].insert_one(dict(item))
         logging.debug("Post added to MongoDB")
         return item
